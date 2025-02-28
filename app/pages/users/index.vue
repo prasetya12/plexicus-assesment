@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useUsers } from "~/composable/useUsers";
 import UserCard from "~/components/UserCard.vue";
+import UserCardLoading from "~/components/Loading/UserCardLoading.vue";
 const { users, fetchUsers, loading, error } = useUsers();
 
 fetchUsers();
@@ -11,7 +12,9 @@ fetchUsers();
     <h1 class="text-2xl font-semibold">Users List</h1>
     <h4 class="text-gray-400">List of users available for communication</h4>
     <div class="mt-8">
-      <div v-if="loading">Loading...</div>
+      <div v-if="loading">
+        <UserCardLoading />
+      </div>
       <div v-else-if="error" class="text-red-500">{{ error }}</div>
       <div v-else class="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 gap-4">
         <UserCard v-for="user in users" :key="user.id" :user="user" />

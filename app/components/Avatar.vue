@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
-import { getInitialName, getRandomBackgroundColor } from "~~/utils/helper";
+import { getInitialName, getRandomBackgroundColor } from "../utils/helper";
 
 const props = defineProps({
   name: {

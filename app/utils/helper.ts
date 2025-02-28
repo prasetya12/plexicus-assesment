@@ -1,3 +1,5 @@
+import { Address } from "~/domain/entities/User";
+
 export function getInitialName(name: string) {
     if (!name) return "";
     const words = name.trim().split(" ");
@@ -20,4 +22,12 @@ export function getRandomBackgroundColor() {
         "#BEE3F8",
     ];
     return softColors[Math.floor(Math.random() * softColors.length)];
+}
+
+export function formatAddress(address: Address) {
+    if (!address) return "";
+
+    const { street, suite, city, zipcode } = address;
+
+    return `${street}, ${suite}, ${city}, ${zipcode}`;
 }

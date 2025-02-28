@@ -45,11 +45,13 @@ defineProps({
         </div>
       </div>
       <div class="flex">
-        <div
-          class="text-sm py-2 px-3 border border-indigo-600 rounded-xl cursor-pointer text-indigo-600"
-        >
-          View Detail
-        </div>
+        <NuxtLink :to="`/users/${user.id}`">
+          <div
+            class="text-sm py-2 px-3 border border-indigo-600 rounded-xl cursor-pointer text-indigo-600"
+          >
+            View Detail
+          </div>
+        </NuxtLink>
       </div>
     </div>
   </div>
